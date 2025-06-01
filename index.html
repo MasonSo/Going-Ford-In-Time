@@ -8,95 +8,31 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 
-<body>
-  <header>
-    <div class="header-frame">
-      <video autoplay loop muted playsinline width="100%">
-        <source src="header_anim.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </header>
-  <main>
-    <div class="video-frame">
-      <video width="100%" controls>
-        <source src="your-video.mp4" type="video/mp4" />
-        error..
-      </video>
-    </div>
-
-    <div class="sample-page">
-      <img src="sample-page.jpg" alt="Sample Comic Page" />
-    </div>
-
-    <p class="notify-text">
-      click <a href="#" id="openSignup">HERE</a> to be notified when the first issue comes out!
-    </p>
-  </main>
-
-  <footer>
-    <p>© 2025 VLAM! | All Rights Reserved</p>
-  </footer>
-
-  <div id="signupModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Get Notified</h2>
-      <p>Enter your email to be notified when the first issue drops!</p>
-    <form id="signupForm">
-  <input type="email" id="emailInput" placeholder="Your email" required />
-  <button type="submit">Notify Me</button>
-</form>
-<p id="successMessage" style="color: green; display: none; margin-top: 1rem;">
-  Gotcha! You'll be notified when the first issue drops.
-</p>
-
-    </div>
+<body class="index">
+  <div class="trailer-frame">
+    <video id="trailerVideo" playsinline>
+      <source src="trailer.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <button id="playButton" class="play-button">▶</button>
   </div>
-
   <script>
-    const modal = document.getElementById('signupModal');
-    const openBtn = document.getElementById('openSignup');
-    const closeBtn = document.querySelector('.close');
-    const form = document.getElementById('signupForm');
+  const video = document.getElementById('trailerVideo');
+  const playButton = document.getElementById('playButton');
 
-    openBtn.onclick = function (e) {
-      e.preventDefault();
-      modal.style.display = 'block';
-    };
+  playButton.addEventListener('click', () => {
+    video.play();
+    playButton.style.display = 'none';
+  });
 
-    closeBtn.onclick = function () {
-      modal.style.display = 'none';
-    };
+const trailer = document.getElementById('trailerVideo');
+  trailer.addEventListener('ended', () => {
+    window.location.href = 'preview.html';
+  });
+</script>
 
-    window.onclick = function (e) {
-      if (e.target === modal) {
-        modal.style.display = 'none';
-      }
-    };
+</body>
 
-    form.onsubmit = function (e) {
-      e.preventDefault();
-      const email = document.getElementById('emailInput').value;
-      console.log('Going Ford in Time');
-      const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfKBEhJHJwDcg0VI8mc3YSnt-7Gv4l-qe93Aycf7zqhGzA1Dw/formResponse?usp=sharing&ouid=113596772372367379350';
-      const fieldName = 'entry.649778390';
-
-      const data = new FormData();
-      data.append(fieldName, email);
-
-      fetch(formUrl, {
-        method: 'POST',
-        mode: 'no-cors',
-        body: data
-      }).then(() => {
-        document.getElementById('successMessage').style.display = 'block';
-        form.reset();
-      }).catch(() => {
-        alert('Something went wrong. Try again later.');
-      });
-    };
-  </script>
 
 
 </body>
