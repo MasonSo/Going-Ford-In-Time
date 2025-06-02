@@ -18,12 +18,12 @@ body.index{
 .trailer-frame {
   position: fixed;
   top: 0; left: 0;
-  width: 100vw; 
+  width: 100vw;
   height: 100vh;
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
   overflow: hidden;
   z-index: 0;
 }
@@ -33,14 +33,6 @@ body.index{
   max-height: 100%;
   object-fit: contain;
   background-color: black;
-}
-
-
-
-.trailer-frame video {
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
 }
 
 .play-button {
