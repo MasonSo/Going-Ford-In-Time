@@ -6,42 +6,43 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Comic Preview</title>
   <link rel="stylesheet" href="/style.css" />
-  
+
 
 </head>
 
 <body class="preview">
   <div class="content-center">
-  <header>
-    <div class="header-frame">
-      <video autoplay loop muted playsinline width="100%">
-        <source src="/header_anim.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </header>
-  <main>
-    <div class="sample-page">
-  <img src="/page_preview.jpeg" alt="Sample Image">
-  <div class="notify-text"><a href="#">HERE</a></div>
-</div>
+    <header>
+      <div class="header-frame">
+        <video autoplay loop muted playsinline width="100%">
+          <source src="/header_anim.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </header>
+    <main>
+      <div class="sample-page">
+        <img src="/page_preview.jpeg" alt="Sample Image">
+        <div class="notify-text"><a href="#" id="openSignup">HERE</a></div>
 
-  </main>
+      </div>
 
-  <footer>
-    <p>© 2025 VLAM! | All Rights Reserved</p>
-  </footer>
+    </main>
+
+    <footer>
+      <p>© 2025 VLAM! | All Rights Reserved</p>
+    </footer>
   </div>
 
   <div id="signupModal" class="modal">
     <div class="modal-content">
       <span class="close">&times;</span>
-    <form id="signupForm">
-  <input type="email" id="emailInput" placeholder="Your email" required />
-  <button type="submit" id="notifyButton">Notify Me</button>
-</form>
-<p id="successMessage">
-</p>
+      <form id="signupForm">
+        <input type="email" id="emailInput" placeholder="Your email" required />
+        <button type="submit" id="notifyButton">Notify Me</button>
+      </form>
+      <p id="successMessage">
+      </p>
 
     </div>
   </div>
@@ -52,10 +53,11 @@
     const closeBtn = document.querySelector('.close');
     const form = document.getElementById('signupForm');
 
-    openBtn.onclick = function (e) {
+    openBtn.addEventListener('click', (e) => {
       e.preventDefault();
       modal.style.display = 'block';
-    };
+    });
+
 
     closeBtn.onclick = function () {
       modal.style.display = 'none';
@@ -67,29 +69,29 @@
       }
     };
 
-   form.onsubmit = function (e) {
-  e.preventDefault();
-  const email = document.getElementById('emailInput').value;
-  const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfKBEhJHJwDcg0VI8mc3YSnt-7Gv4l-qe93Aycf7zqhGzA1Dw/formResponse';
-  const fieldName = 'entry.649778390';
+    form.onsubmit = function (e) {
+      e.preventDefault();
+      const email = document.getElementById('emailInput').value;
+      const formUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSfKBEhJHJwDcg0VI8mc3YSnt-7Gv4l-qe93Aycf7zqhGzA1Dw/formResponse';
+      const fieldName = 'entry.649778390';
 
-  const data = new FormData();
-  data.append(fieldName, email);
+      const data = new FormData();
+      data.append(fieldName, email);
 
-  fetch(formUrl, {
-    method: 'POST',
-    mode: 'no-cors',
-    body: data
-  }).then(() => {
-    document.getElementById('successMessage').textContent = 'Thank you, stay tuned!';
-    document.getElementById('emailInput').style.display = 'none';
-     document.getElementById('notifyButton').style.display = 'none';
-    document.getElementById('successMessage').style.display = 'block';
-    form.reset();
-  }).catch(() => {
-    alert('Something went wrong. Try again later.');
-  });
-};
+      fetch(formUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: data
+      }).then(() => {
+        document.getElementById('successMessage').textContent = 'Thank you, stay tuned!';
+        document.getElementById('emailInput').style.display = 'none';
+        document.getElementById('notifyButton').style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+        form.reset();
+      }).catch(() => {
+        alert('Something went wrong. Try again later.');
+      });
+    };
 
   </script>
 
