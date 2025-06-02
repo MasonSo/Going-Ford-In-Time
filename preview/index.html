@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Comic Preview</title>
   <link rel="stylesheet" href="/style.css" />
+  
+
 </head>
 
 <body class="preview">
@@ -26,7 +28,7 @@
     </div>
 
     <p class="notify-text">
-      <a href="#" id="openSignup">click to be notified when the first issue comes out!</a> 
+      <a href="#" id="openSignup">HERE</a> 
     </p>
   </main>
 
@@ -40,7 +42,7 @@
       <span class="close">&times;</span>
     <form id="signupForm">
   <input type="email" id="emailInput" placeholder="Your email" required />
-  <button type="submit">Notify Me</button>
+  <button type="submit" id="notifyButton">Notify Me</button>
 </form>
 <p id="successMessage">
 </p>
@@ -83,7 +85,9 @@
     mode: 'no-cors',
     body: data
   }).then(() => {
-    document.getElementById('successMessage').textContent = 'Stay tuned!';
+    document.getElementById('successMessage').textContent = 'Thank you, stay tuned!';
+    document.getElementById('emailInput').style.display = 'none';
+     document.getElementById('notifyButton').style.display = 'none';
     document.getElementById('successMessage').style.display = 'block';
     form.reset();
   }).catch(() => {
@@ -93,6 +97,10 @@
 
   </script>
 
+
+</body>
+
+</html>
 
 </body>
 
