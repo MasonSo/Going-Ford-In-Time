@@ -74,7 +74,7 @@ body.preview {
 
 body.preview h1{
   font-size: 2.5rem;
-    font-family: 'Comic Sans MS', sans-serif;
+    font-family: "Comic Relief", system-ui;
     font-style: bold;
     margin-bottom: .5rem;
 }
@@ -108,7 +108,7 @@ body.preview h1{
   left: 52.5%; 
   transform: translate(-50%, -50%);
   font-size: 2rem;
-  font-family: 'Comic Sans MS', sans-serif;
+  font-family: "Comic Relief", system-ui;
   
 }
 
@@ -165,7 +165,7 @@ footer {
 }
 
 .modal-content button {
-  font-family: 'Comic Sans MS', sans-serif;
+  font-family: "Comic Relief", system-ui;
   padding: 1rem 1rem;
   font-size: 1rem;
   cursor: pointer;
@@ -197,7 +197,7 @@ footer {
 
 #successMessage {
   font-size: 2rem;
-  font-family: 'Comic Sans MS', sans-serif;
+  font-family: "Comic Relief", system-ui;
   color: rgb(0, 0, 0);
   display: none;
   margin-top: 1rem;
@@ -206,7 +206,7 @@ footer {
 /* mobile */
 @media (max-width: 600px) {
   .notify-text {
-    font-family: 'Comic Sans MS', sans-serif;
+    font-family: "Comic Relief", system-ui;
     font-size: .35rem;
   }
   
