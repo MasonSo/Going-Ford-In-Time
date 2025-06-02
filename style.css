@@ -19,7 +19,7 @@ body.index{
   position: fixed;
   top: 0; left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: black;
   display: flex;
   justify-content: center;
@@ -33,6 +33,12 @@ body.index{
   max-height: 100%;
   object-fit: contain;
   background-color: black;
+}
+
+@supports (-webkit-touch-callout: none) {
+  .trailer-frame {
+    height: -webkit-fill-available;
+  }
 }
 
 .play-button {
