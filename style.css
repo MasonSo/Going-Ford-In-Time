@@ -11,7 +11,7 @@ html, body {
 
 /* trailer */
 
-body.index{
+body.index {
   overflow: hidden;
 }
 
@@ -46,8 +46,9 @@ body.index{
   cursor: pointer;
 }
 .play-button:hover {
-   color: rgb(123, 123, 123);
+  color: rgb(123, 123, 123);
 }
+
 /* preview page */
 
 .header-frame {
@@ -62,11 +63,11 @@ body.preview {
   color: #eee;
 }
 
-body.preview h1{
+body.preview h1 {
   font-size: 2.5rem;
-    font-family: 'Comic Sans MS', sans-serif;
-    font-style: bold;
-    margin-bottom: .5rem;
+  font-family: 'Comic Sans MS', sans-serif;
+  font-style: bold;
+  margin-bottom: .5rem;
 }
 
 .content-center {
@@ -88,15 +89,17 @@ body.preview h1{
 }
 
 .notify-text {
-  font-size: 1.5rem;
-  margin: 2rem 0;
+  margin-top: -8rem;
+  margin-bottom: 2.5rem;
+  margin-left: 3rem;
 }
 
 .notify-text a {
-  font-size: 3rem;
+  font-size: 2rem;
   font-family: 'Comic Sans MS', sans-serif;
   text-decoration: underline;
-  color: white;
+  color: rgb(0, 0, 0);
+  z-index: 2;
 }
 
 .notify-text a:hover {
@@ -105,8 +108,9 @@ body.preview h1{
 }
 
 footer {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #e0e0e0;
+  margin-top: 6rem;
   margin-bottom: 2rem;
 }
 
@@ -131,10 +135,6 @@ footer {
   text-align: center;
   border-radius: 8px;
 }
-
-/* .modal-content h2 {
-  margin-top: 0;
-} */
 
 .modal-content input {
   width: 80%;
@@ -163,14 +163,14 @@ footer {
   float: right;
   font-size: 2rem;
   cursor: pointer;
-  color:#000000;
+  color: #000000;
 }
 
 .close:hover {
   color: #767676;
 }
 
-#emailInput{
+#emailInput {
   font-family: 'Times New Roman', sans-serif;
   color: rgb(0, 0, 0);
 }
@@ -181,4 +181,74 @@ footer {
   color: rgb(0, 0, 0);
   display: none;
   margin-top: 1rem;
+}
+
+/* ============ MEDIA QUERIES ============ */
+
+/* PC */
+@media (max-width: 1024px) {
+  .header-frame {
+    width: 70%;
+    margin-bottom: 4rem;
+  }
+
+  .sample-page img {
+    width: 100%;
+    max-width: 100vw;
+    border-width: 1vw;
+  }
+
+  .notify-text {
+    margin-top: -6rem;
+    margin-left: 2rem;
+    font-size: 1.4rem;
+  }
+
+  .notify-text a {
+    font-size: 1.7rem;
+  }
+
+  .modal-content {
+    padding: 1.5rem;
+    width: 95%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .header-frame {
+    width: 90%;
+    margin-bottom: 3rem;
+  }
+
+  .play-button {
+    font-size: 2.5rem;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .sample-page img {
+    width: 100%;
+    max-width: 100vw;
+    border-width: 1vw;
+  }
+
+  .notify-text {
+    margin-top: -3rem;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+  }
+
+  .notify-text a {
+    font-size: 1.4rem;
+  }
+
+  .modal-content {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  footer {
+    font-size: 0.8rem;
+    margin-top: 3rem;
+  }
 }
